@@ -13,6 +13,8 @@ install:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then sudo brew update; fi
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then sudo brew install gnu-sed gnu-tar xz; fi
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then sudo brew install faad2 sdl freetype libvorbis theora openjpeg libmad xvid libogg spidermonkey ffmpeg ; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then wget http://wkhtmltopdf.googlecode.com/files/wkhtmltoimage-OSX-0.10.0_rc2-static.tar.bz2 ; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then sudo tar xvjf wkhtmltoimage-OSX-0.10.0_rc2-static.tar.bz2 -C /usr/local/bin ; fi
 env:
   - GPAC_CONFIGURE_OPTIONS="--enable-mem-track --enable-gcov" DOINSTALL="sudo make install" DOTRAVIS="make travis" AUDIODEV=null
   - GPAC_CONFIGURE_OPTIONS="--prefix=build/all" DOINSTALL="make install" DOTRAVIS=""
