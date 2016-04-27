@@ -25,7 +25,7 @@ env:
 before_script:
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then "export DISPLAY=:99.0" ; fi
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then "sh -e /etc/init.d/xvfb start" ; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sleep 3 # give xvfb some time to start ; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sleep 3 ; fi # give xvfb some time to start
 script: 
   - ./configure $GPAC_CONFIGURE_OPTIONS && make && $DOINSTALL && $DOTRAVIS
 after_success:
